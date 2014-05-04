@@ -26,6 +26,10 @@ Browser aiming to recreate classic Opera (12.x) UI using Qt5.
 
 
 %prep
+# Bug : https://issues.openmandriva.org/show_bug.cgi?id=749
+cd builddir/build/SOURCES
+wget https://github.com/Emdek/otter/archive/v0.5.01.tar.gz
+cd -
 %setup -qn %{oname}-%{version}
 # icon design is under WIP
 perl -pi -e "s|Icon=|Icon=web_browser_section|" %{name}.desktop 
