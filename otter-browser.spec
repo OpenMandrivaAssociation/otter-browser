@@ -28,7 +28,10 @@ Browser aiming to recreate classic Opera (12.x) UI using Qt5.
 %prep
 %setup -qn %{oname}-%{version}
 # icon design is done
-#perl -pi -e "s|Icon=|Icon=web_browser_section|" %{name}.desktop 
+install -d -m755 %{buildroot}{%{_miconsdir},%{_iconsdir},%{_liconsdir}}
+install -m644 resources/icons/%{name}-16.png %{buildroot}%{_miconsdir}/%{name}.png
+install -m644 resources/icons/%{name}-32.png %{buildroot}%{_iconsdir}/%{name}.png
+install -m644 resources/icons/%{name}-48.png %{buildroot}%{_liconsdir}/%{name}.png
 
 %build
 %qmake_qt5 
@@ -46,4 +49,6 @@ desktop-file-install \
 %doc CHANGELOG README.md COPYING TODO HACKING
 %{_bindir}/otter-browser
 %{_datadir}/applications/%{name}.desktop
-
+%{_miconsdir}/%{name}.png
+%{_iconsdir}/%{name}.png
+%{_liconsdir}/%{name}.png
