@@ -27,8 +27,8 @@ Browser aiming to recreate classic Opera (12.x) UI using Qt5.
 
 %prep
 %setup -qn %{oname}-%{version}
-# icon design is under WIP
-perl -pi -e "s|Icon=|Icon=web_browser_section|" %{name}.desktop 
+# icon design is done
+#perl -pi -e "s|Icon=|Icon=web_browser_section|" %{name}.desktop 
 
 %build
 %qmake_qt5 
