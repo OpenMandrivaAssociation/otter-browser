@@ -3,7 +3,7 @@ Name:		otter-browser
 Summary:	Web browser controlled by the user, not vice-versa
 License:	GPLv3
 Version:	0.9.01
-Release:	2
+Release:	3
 Group:		Networking/WWW 
 URL:		http://otter-browser.org/
 Source:		https://github.com/Emdek/%{oname}/archive/v%{version}.tar.gz
@@ -30,28 +30,15 @@ Browser aiming to recreate classic Opera (12.x) UI using Qt5.
 
 
 %build
-%qmake_qt5 
+%cmake_qt5
 %make
 
+
 %install
-install -Dm755 otter-browser %{buildroot}%{_bindir}/otter-browser
-
-mkdir -p %{buildroot}%{_datadir}/applications
-desktop-file-install \
-  --dir=%{buildroot}%{_datadir}/applications \
-   %{name}.desktop
-
-
-# icon design is done
-install -d -m755 %{buildroot}{%{_miconsdir},%{_iconsdir},%{_liconsdir}}
-install -m644 resources/icons/%{name}-16.png %{buildroot}%{_miconsdir}/%{name}.png
-install -m644 resources/icons/%{name}-32.png %{buildroot}%{_iconsdir}/%{name}.png
-install -m644 resources/icons/%{name}-48.png %{buildroot}%{_liconsdir}/%{name}.png
+%makeinstall_std -C build
 
 %files
 %doc CHANGELOG README.md COPYING TODO HACKING
 %{_bindir}/otter-browser
 %{_datadir}/applications/%{name}.desktop
-%{_miconsdir}/%{name}.png
-%{_iconsdir}/%{name}.png
-%{_liconsdir}/%{name}.png
+%{_iconsdir}/hicolor/*/*/%{name}.png
