@@ -20,6 +20,7 @@ BuildRequires:  pkgconfig(Qt5WebKitWidgets) >= 5.2
 BuildRequires:  pkgconfig(Qt5Script)
 BuildRequires:	desktop-file-utils
 BuildRequires:	qmake5
+BuildRequires:	pkgconfig(Qt5Concurrent)
 
 %description
 Browser aiming to recreate classic Opera (12.x) UI using Qt5.
