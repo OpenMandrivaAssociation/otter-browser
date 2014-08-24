@@ -2,8 +2,8 @@
 Name:		otter-browser
 Summary:	Web browser controlled by the user, not vice-versa
 License:	GPLv3
-Version:	0.9.01
-Release:	3
+Version:	0.9.02
+Release:	1
 Group:		Networking/WWW 
 URL:		http://otter-browser.org/
 Source:		https://github.com/Emdek/%{oname}/archive/v%{version}.tar.gz
