@@ -2,8 +2,8 @@
 Name:		otter-browser
 Summary:	Web browser controlled by the user, not vice-versa
 License:	GPLv3
-Version:	0.9.01
-Release:	3
+Version:	0.9.02
+Release:	1
 Group:		Networking/WWW 
 URL:		http://otter-browser.org/
 Source:		https://github.com/Emdek/%{oname}/archive/v%{version}.tar.gz
@@ -20,6 +20,7 @@ BuildRequires:  pkgconfig(Qt5WebKitWidgets) >= 5.2
 BuildRequires:  pkgconfig(Qt5Script)
 BuildRequires:	desktop-file-utils
 BuildRequires:	qmake5
+BuildRequires:	pkgconfig(Qt5Concurrent)
 
 %description
 Browser aiming to recreate classic Opera (12.x) UI using Qt5.
@@ -37,7 +38,9 @@ Browser aiming to recreate classic Opera (12.x) UI using Qt5.
 %install
 %makeinstall_std -C build
 
-%files
+%{find_lang} %{name} --with-qt
+
+%files -f %{name}.lang
 %doc CHANGELOG README.md COPYING TODO HACKING
 %{_bindir}/otter-browser
 %{_datadir}/applications/%{name}.desktop
