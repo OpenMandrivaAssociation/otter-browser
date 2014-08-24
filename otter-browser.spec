@@ -38,7 +38,9 @@ Browser aiming to recreate classic Opera (12.x) UI using Qt5.
 %install
 %makeinstall_std -C build
 
-%files
+%{find_lang} %{name} --with-qt
+
+%files -f %{name}.lang
 %doc CHANGELOG README.md COPYING TODO HACKING
 %{_bindir}/otter-browser
 %{_datadir}/applications/%{name}.desktop
