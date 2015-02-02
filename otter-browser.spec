@@ -2,7 +2,7 @@
 Name:		otter-browser
 Summary:	Web browser controlled by the user, not vice-versa
 License:	GPLv3
-Version:	0.9.02
+Version:	0.9.04
 Release:	1
 Group:		Networking/WWW 
 URL:		http://otter-browser.org/
@@ -18,6 +18,7 @@ BuildRequires:  pkgconfig(Qt5Widgets) >= 5.2
 BuildRequires:  pkgconfig(Qt5WebKit) >= 5.2
 BuildRequires:  pkgconfig(Qt5WebKitWidgets) >= 5.2
 BuildRequires:  pkgconfig(Qt5Script)
+BuildRequires:  pkgconfig(Qt5Multimedia) >= 5.2
 BuildRequires:	desktop-file-utils
 BuildRequires:	qmake5
 BuildRequires:	pkgconfig(Qt5Concurrent)
