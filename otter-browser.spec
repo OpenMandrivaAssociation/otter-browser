@@ -22,6 +22,8 @@ BuildRequires:  pkgconfig(Qt5Multimedia) >= 5.2
 BuildRequires:	desktop-file-utils
 BuildRequires:	qmake5
 BuildRequires:	pkgconfig(Qt5Concurrent)
+BuildRequires:	qt5-qtmultimedia
+
 
 %description
 Browser aiming to recreate classic Opera (12.x) UI using Qt5.
