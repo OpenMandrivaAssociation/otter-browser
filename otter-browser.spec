@@ -2,13 +2,14 @@
 Name:		otter-browser
 Summary:	Web browser controlled by the user, not vice-versa
 License:	GPLv3
-Version:	0.9.04
+Version:	0.9.12
 Release:	1
 Group:		Networking/WWW 
 URL:		http://otter-browser.org/
-Source:		https://github.com/Emdek/%{oname}/archive/v%{version}.tar.gz
+Source0:	https://github.com/Emdek/%{oname}/archive/v%{version}.tar.gz
 
 BuildRequires:  cmake
+BuildRequires:	ninja
 BuildRequires:  pkgconfig(Qt5Core) >= 5.2
 BuildRequires:  pkgconfig(Qt5Network) >= 5.2
 BuildRequires:  pkgconfig(Qt5PrintSupport) >= 5.2
@@ -28,21 +29,24 @@ Browser aiming to recreate classic Opera (12.x) UI using Qt5.
 
 
 %prep
-%setup -qn %{oname}-%{version}
+%setup -q
 
 
 %build
-%cmake_qt5
-%make
+%cmake_qt5 -G Ninja
+%ninja
 
 
 %install
-%makeinstall_std -C build
+%ninja_install -C build
 
 %{find_lang} %{name} --with-qt
 
 %files -f %{name}.lang
-%doc CHANGELOG README.md COPYING TODO HACKING
+%doc CHANGELOG README.md COPYING TODO
 %{_bindir}/otter-browser
 %{_datadir}/applications/%{name}.desktop
 %{_iconsdir}/hicolor/*/*/%{name}.png
+%{_mandir}/man1/otter-browser.1*
+%lang(jbo) %{_datadir}/otter-browser/locale/otter-browser_jbo.qm
+%lang(yue) %{_datadir}/otter-browser/locale/otter-browser_yue.qm
