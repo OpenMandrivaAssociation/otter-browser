@@ -6,7 +6,7 @@ Version:	0.9.99.3
 Release:	1
 Group:		Networking/WWW 
 URL:		http://otter-browser.org/
-Source0:	https://github.com/Emdek/%{oname}/archive/v%{version}.tar.gz
+Source0:	https://github.com/OtterBrowser/otter-browser/archive/v0.9.99.3/otter-browser-0.9.99.3.tar.gz
 
 BuildRequires:  cmake
 BuildRequires:	ninja
