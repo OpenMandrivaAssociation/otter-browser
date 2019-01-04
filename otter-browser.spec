@@ -19,6 +19,7 @@ BuildRequires:  pkgconfig(Qt5Sql) >= 5.2
 BuildRequires:  pkgconfig(Qt5Widgets) >= 5.2
 BuildRequires:  pkgconfig(Qt5WebKit) >= 5.2
 BuildRequires:  pkgconfig(Qt5WebKitWidgets) >= 5.2
+BuildRequires:  pkgconfig(Qt5WebEngineWidgets)
 BuildRequires:  pkgconfig(Qt5Script)
 BuildRequires:  pkgconfig(Qt5Multimedia) >= 5.2
 BuildRequires:  pkgconfig(Qt5Qml) >= 5.2
@@ -28,6 +29,7 @@ BuildRequires:  pkgconfig(Qt5XmlPatterns) >= 5.2
 BuildRequires:	desktop-file-utils
 BuildRequires:	qmake5
 BuildRequires:	pkgconfig(Qt5Concurrent)
+BuildRequires:  pkgconfig(hunspell)
 
 %description
 Browser aiming to recreate classic Opera (12.x) UI using Qt5.
