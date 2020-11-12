@@ -20,3 +20,15 @@ index e0beb75d9..ef8ba5158 100644
  #include <QtGui/QPixmapCache>
  #include <QtWidgets/QDesktopWidget>
  #include <QtWidgets/QGridLayout>
+
+diff -uraN otter-browser-1.0.01/src/modules/backends/web/qtwebkit/QtWebKitPluginWidget.cpp omv-otter-browser-1.0.01/src/modules/backends/web/qtwebkit/QtWebKitPluginWidget.cpp
+--- otter-browser-1.0.01/src/modules/backends/web/qtwebkit/QtWebKitPluginWidget.cpp	2019-01-01 17:59:01.000000000 +0100
++++ omv-otter-browser-1.0.01/src/modules/backends/web/qtwebkit/QtWebKitPluginWidget.cpp	2020-11-12 17:24:00.306281574 +0100
+@@ -22,6 +22,7 @@
+ 
+ #include <QtGui/QMouseEvent>
+ #include <QtGui/QPainter>
++#include <QtGui/QPainterPath>
+ 
+ namespace Otter
+ {
