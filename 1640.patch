@@ -1,0 +1,22 @@
+From fc9dda1d35251d8c123853f2f7d43fa97213d5a8 Mon Sep 17 00:00:00 2001
+From: Jimi Huotari <chiitoo@gentoo.org>
+Date: Mon, 16 Mar 2020 16:28:19 +0200
+Subject: [PATCH] Fix build with Qt 5.15
+
+The QPainterPath is no longer included via other means.
+---
+ src/modules/windows/web/StartPageWidget.cpp | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/modules/windows/web/StartPageWidget.cpp b/src/modules/windows/web/StartPageWidget.cpp
+index e0beb75d9..ef8ba5158 100644
+--- a/src/modules/windows/web/StartPageWidget.cpp
++++ b/src/modules/windows/web/StartPageWidget.cpp
+@@ -41,6 +41,7 @@
+ #include <QtGui/QGuiApplication>
+ #include <QtGui/QMouseEvent>
+ #include <QtGui/QPainter>
++#include <QtGui/QPainterPath>
+ #include <QtGui/QPixmapCache>
+ #include <QtWidgets/QDesktopWidget>
+ #include <QtWidgets/QGridLayout>
