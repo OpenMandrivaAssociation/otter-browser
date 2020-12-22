@@ -2,15 +2,11 @@
 Name:		otter-browser
 Summary:	Web browser controlled by the user, not vice-versa
 License:	GPLv3
-Version:	1.0.01
-Release:	5
+Version:	1.0.02
+Release:	1
 Group:		Networking/WWW 
 URL:		http://otter-browser.org/
 Source0:	https://github.com/OtterBrowser/otter-browser/archive/v%{version}/%{name}-%{version}.tar.gz
-# mirror https://sourceforge.net/projects/otter-browser/files/otter-browser-%{version}/%{name}-%{version}.tar.bz2
-#Patch to fix https://issues.openmandriva.org/show_bug.cgi?id=2550
-Patch0: otter-browser-start-page-fix-openmandriva.patch
-Patch1: https://patch-diff.githubusercontent.com/raw/OtterBrowser/otter-browser/pull/1640.patch
 
 BuildRequires:  cmake
 BuildRequires:	ninja
@@ -40,13 +36,11 @@ Browser aiming to recreate classic Opera (12.x) UI using Qt5.
 
 %prep
 %setup -q
-%patch0 -p0
-%patch1 -p1
+%autopatch -p1
 
 %build
 %cmake_qt5 -G Ninja
 %ninja
-
 
 %install
 %ninja_install -C build
