@@ -53,5 +53,3 @@ Browser aiming to recreate classic Opera (12.x) UI using Qt5.
 %{_datadir}/applications/%{name}.desktop
 %{_iconsdir}/hicolor/*/*/%{name}.png
 %{_mandir}/man1/otter-browser.1*
-%lang(jbo) %{_datadir}/otter-browser/locale/otter-browser_jbo.qm
-%lang(yue) %{_datadir}/otter-browser/locale/otter-browser_yue.qm
