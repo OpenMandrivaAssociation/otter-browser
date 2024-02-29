@@ -3,7 +3,7 @@ Name:		otter-browser
 Summary:	Web browser controlled by the user, not vice-versa
 License:	GPLv3
 Version:	1.0.03
-Release:	4
+Release:	5
 Group:		Networking/WWW 
 URL:		http://otter-browser.org/
 Source0:	https://github.com/OtterBrowser/otter-browser/archive/v%{version}/%{name}-%{version}.tar.gz
@@ -16,8 +16,6 @@ BuildRequires:  pkgconfig(Qt5PrintSupport) >= 5.2
 BuildRequires:  pkgconfig(Qt5Sensors) >= 5.2
 BuildRequires:  pkgconfig(Qt5Sql) >= 5.2
 BuildRequires:  pkgconfig(Qt5Widgets) >= 5.2
-BuildRequires:  pkgconfig(Qt5WebKit) >= 5.2
-BuildRequires:  pkgconfig(Qt5WebKitWidgets) >= 5.2
 BuildRequires:  pkgconfig(Qt5WebEngineWidgets)
 BuildRequires:  pkgconfig(Qt5Script)
 BuildRequires:  pkgconfig(Qt5Multimedia) >= 5.2
@@ -39,7 +37,7 @@ Browser aiming to recreate classic Opera (12.x) UI using Qt5.
 %autopatch -p1
 
 %build
-%cmake_qt5 -G Ninja
+%cmake_qt5 -G Ninja -DENABLE_QTWEBKIT=OFF
 %ninja
 
 %install
