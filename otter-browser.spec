@@ -5,7 +5,7 @@ License:	GPLv3
 Version:	1.0.03
 Release:	5
 Group:		Networking/WWW 
-URL:		http://otter-browser.org/
+URL:		https://otter-browser.org/
 Source0:	https://github.com/OtterBrowser/otter-browser/archive/v%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:  cmake
